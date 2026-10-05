@@ -734,3 +734,4 @@ em { font-style: italic; color: var(--ouro); }
   .capa .selo-oab { margin-bottom: 40px; }
 }
 .capa__linha b { font-weight: 600; }
+.parceria-oab__numero--texto { font-size: clamp(48px, 6vw, 72px); font-style: italic; }
