@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resende Perícias Médicas · Dra. Priscila Cintra Campos Resende</title>
-  <meta name="description" content="Perita judicial em Minas Gerais e assistente técnica de parte em todo o Brasil. Dra. Priscila Cintra Campos Resende, médica perita, CRM/MG 72810. INSS e BPC, curatela, trabalhista, erro médico e dano corporal.">
+  <title>Perita Médica Judicial e Assistente Técnico em Perícia Médica | Resende Perícias Médicas</title>
+  <meta name="description" content="Perícia médica judicial em Minas Gerais e assistente técnico em perícia médica em todo o Brasil. INSS e BPC, erro médico, trabalhista, curatela e dano corporal. Dra. Priscila Resende, CRM/MG 72810, Belo Horizonte.">
   <meta name="theme-color" content="#141A29">
   <link rel="canonical" href="https://resendepericias.com.br/">
 
@@ -16,37 +16,138 @@
   <meta property="og:url" content="https://resendepericias.com.br/">
   <meta property="og:image" content="https://resendepericias.com.br/assets/img/compartilhar.jpg">
 
-  <link rel="icon" href="assets/marca/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/marca/icone-180.png">
+  <link rel="icon" href="/assets/marca/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/marca/icone-180.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Resende Perícias Médicas",
-    "legalName": "Resende Soluções Médicas Ltda.",
-    "taxID": "37.037.770/0001-19",
-    "url": "https://resendepericias.com.br/",
-    "telephone": "+55-31-97108-7909",
-    "email": "contato@resendepericias.com.br",
-    "sameAs": ["https://www.instagram.com/resendepericiasmedicas/"],
-    "areaServed": [{ "@type": "State", "name": "Minas Gerais" }, { "@type": "Country", "name": "Brasil" }],
-    "address": { "@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "addressCountry": "BR" },
-    "founder": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://resendepericias.com.br/#empresa",
+      "name": "Resende Perícias Médicas",
+      "legalName": "Resende Soluções Médicas Ltda.",
+      "taxID": "37.037.770/0001-19",
+      "url": "https://resendepericias.com.br/",
+      "logo": "https://resendepericias.com.br/assets/marca/icone-512.png",
+      "image": "https://resendepericias.com.br/assets/img/compartilhar.jpg",
+      "telephone": "+55-31-97108-7909",
+      "email": "contato@resendepericias.com.br",
+      "sameAs": [
+        "https://www.instagram.com/resendepericiasmedicas/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Minas Gerais"
+        },
+        {
+          "@type": "Country",
+          "name": "Brasil"
+        }
+      ],
+      "description": "Perícia médica judicial em Minas Gerais e assistência técnica médica para advogados em todo o Brasil.",
+      "knowsAbout": [
+        "Perícia médica judicial",
+        "Assistente técnico em perícia médica",
+        "Perícia previdenciária INSS",
+        "BPC/LOAS",
+        "Erro médico",
+        "Perícia trabalhista",
+        "Curatela e interdição",
+        "Dano corporal",
+        "Dano estético"
+      ],
+      "founder": {
+        "@id": "https://resendepericias.com.br/#priscila"
+      }
+    },
+    {
       "@type": "Person",
+      "@id": "https://resendepericias.com.br/#priscila",
       "name": "Priscila Cintra Campos Resende",
+      "honorificPrefix": "Dra.",
       "jobTitle": "Médica perita",
+      "identifier": "CRM/MG 72810",
       "alumniOf": "Universidade Federal de Ouro Preto",
       "memberOf": "Associação Brasileira de Medicina Legal e Perícias Médicas (ABMLPM)",
-      "identifier": "CRM/MG 72810"
+      "image": "https://resendepericias.com.br/assets/img/priscila-jaleco.jpg",
+      "worksFor": {
+        "@id": "https://resendepericias.com.br/#empresa"
+      },
+      "sameAs": [
+        "https://www.instagram.com/resendepericiasmedicas/"
+      ]
     },
-    "description": "Perícia médica judicial em Minas Gerais e assistência técnica de parte em todo o Brasil."
-  }
+    {
+      "@type": "WebSite",
+      "@id": "https://resendepericias.com.br/#site",
+      "url": "https://resendepericias.com.br/",
+      "name": "Resende Perícias Médicas",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://resendepericias.com.br/#empresa"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre perito judicial e assistente técnico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O perito é nomeado pelo juiz e deve ser imparcial. O assistente técnico é indicado por uma das partes para acompanhar a perícia, formular quesitos e apresentar parecer próprio sobre o laudo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o melhor momento para contratar um assistente técnico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O quanto antes. O prazo para indicar assistente e apresentar quesitos é de 15 dias da nomeação do perito, e a análise de viabilidade pode ser feita até antes do ajuizamento da ação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Você atende fora de Minas Gerais?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Como perita judicial, sou nomeada em comarcas de Minas Gerais. Como assistente técnica, atendo advogados e partes de todo o Brasil: a análise de documentos, os quesitos e os pareceres são feitos a distância, e o acompanhamento presencial do exame pode ser combinado em qualquer estado. Quando há viagem, somam-se as horas de deslocamento e as despesas, sempre informadas no orçamento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como é calculado o valor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pela hora técnica de referência da Associação Brasileira de Medicina Legal e Perícias Médicas, multiplicada pelas horas de cada etapa. Você recebe o orçamento por escrito antes do início."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que preciso enviar para a primeira análise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A petição, os documentos médicos (prontuários, exames, relatórios) e, se houver, o laudo do perito e os quesitos já apresentados. Tudo é tratado com sigilo."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -56,7 +157,7 @@
   <header class="topo" data-topo>
     <div class="topo__faixa envelope">
       <a class="topo__marca" href="#inicio" aria-label="Resende Perícias Médicas, início">
-        <img src="assets/marca/logo-claro.svg" alt="Resende Perícias Médicas" width="210" height="58">
+        <img src="/assets/marca/logo-claro.svg" alt="Resende Perícias Médicas" width="210" height="58">
       </a>
       <nav class="topo__nav" aria-label="Seções">
         <a href="#sobre">Quem sou</a>
@@ -97,7 +198,8 @@
           <span>Empresa <strong>conveniada</strong> · condições especiais para advogados</span>
         </a>
         <h1 class="capa__marca revelar">
-          <img src="assets/marca/logo-claro.svg" alt="Resende Perícias Médicas" width="1722" height="475" fetchpriority="high">
+          <img src="/assets/marca/logo-claro.svg" alt="" width="1722" height="475" fetchpriority="high">
+          <span class="sr">Resende Perícias Médicas: perita médica judicial e assistente técnico em perícia médica</span>
         </h1>
         <p class="capa__linha revelar"><b>Perícia médica judicial</b><span aria-hidden="true">·</span><b>Assistência técnica</b></p>
         <p class="capa__frase revelar">Sua tese ganha força com respaldo <em>médico.</em></p>
@@ -131,7 +233,7 @@
           <h2 class="titulo revelar">Medicina com método, a serviço da <em>justiça.</em></h2>
           <figure class="retrato retrato--sobre revelar">
             <div class="retrato__moldura">
-              <img src="assets/img/priscila-jaleco.jpg" alt="Dra. Priscila Cintra Campos Resende, de jaleco, sorrindo" width="1024" height="1536" loading="lazy">
+              <img src="/assets/img/priscila-jaleco.jpg" alt="Dra. Priscila Cintra Campos Resende, de jaleco, sorrindo" width="1024" height="1536" loading="lazy">
             </div>
             <figcaption class="retrato__selo">
               <span class="retrato__numero" data-contar="1000">~1.000</span>
@@ -244,6 +346,7 @@
               <li>Parecer técnico fundamentado para a manifestação sobre o laudo</li>
             </ul>
             <a class="botao botao--ouro botao--pequeno" href="#contato">Quero um assistente técnico</a>
+            <a class="link-seta" href="/assistente-tecnico-pericia-medica/">O que faz o assistente técnico</a>
           </article>
         </div>
 
@@ -274,26 +377,31 @@
             <span class="area__numero">01</span>
             <h3>INSS e BPC</h3>
             <p>Incapacidade laborativa, auxílio-doença, auxílio-acidente, aposentadoria por incapacidade e grau de deficiência.</p>
+            <a class="link-seta" href="/pericia-inss-bpc/">Saiba mais sobre INSS e BPC</a>
           </li>
           <li class="area revelar">
             <span class="area__numero">02</span>
             <h3>Curatela e <i>home care</i></h3>
             <p>Discernimento para os atos da vida civil; indicação e manutenção de internação domiciliar.</p>
+            <a class="link-seta" href="/pericia-curatela-interdicao/">Saiba mais sobre curatela</a>
           </li>
           <li class="area revelar">
             <span class="area__numero">03</span>
             <h3>Trabalhista</h3>
             <p>Doença ocupacional, acidente de trabalho, nexo causal e incapacidade, com visita ao posto quando necessário.</p>
+            <a class="link-seta" href="/pericia-trabalhista/">Saiba mais sobre perícia trabalhista</a>
           </li>
           <li class="area revelar">
             <span class="area__numero">04</span>
             <h3>Erro médico</h3>
             <p>Responsabilidade civil, nexo entre conduta e dano, falha de diagnóstico, dano estético e óbito.</p>
+            <a class="link-seta" href="/pericia-erro-medico/">Saiba mais sobre erro médico</a>
           </li>
           <li class="area revelar">
             <span class="area__numero">05</span>
             <h3>Dano corporal e estético</h3>
             <p>Sequelas de acidentes e lesões, com quantificação do dano corporal e do dano estético.</p>
+            <a class="link-seta" href="/dano-corporal-estetico/">Saiba mais sobre dano corporal</a>
           </li>
           <li class="area area--convite revelar" data-luz>
             <h3>Seu caso é de outra área?</h3>
@@ -512,7 +620,7 @@
   <!-- ============ RODAPÉ ============ -->
   <footer class="rodape">
     <div class="rodape__grade envelope">
-      <img src="assets/marca/logo-claro.svg" alt="Resende Perícias Médicas" width="190" height="52">
+      <img src="/assets/marca/logo-claro.svg" alt="Resende Perícias Médicas" width="190" height="52">
       <p>
         Responsável técnica: Dra. Priscila Cintra Campos Resende · Médica · CRM/MG 72810<br>
         Belo Horizonte, Minas Gerais · atuação em todo o Brasil<br>
@@ -531,6 +639,6 @@
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7a.6.6 0 0 0 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.4Z"/></svg>
   </a>
 
-  <script src="assets/js/site.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

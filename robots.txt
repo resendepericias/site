@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://resendepericias.com.br/sitemap.xml

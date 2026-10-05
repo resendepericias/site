@@ -3,14 +3,16 @@ document.documentElement.classList.add('js');
 
 // Cabeçalho ganha fundo depois de rolar
 const topo = document.querySelector('[data-topo]');
-const marcarRolagem = () => topo.classList.toggle('rolou', window.scrollY > 24);
+// Nas páginas internas (sem capa) o cabeçalho fica sempre com fundo
+const interna = !document.querySelector('.capa');
+const marcarRolagem = () => topo.classList.toggle('rolou', interna || window.scrollY > 24);
 marcarRolagem();
 window.addEventListener('scroll', marcarRolagem, { passive: true });
 
 // Menu do celular
 const botaoMenu = document.querySelector('[data-menu]');
 const menu = document.getElementById('menu-movel');
-const fecharMenu = () => { botaoMenu.setAttribute('aria-expanded', 'false'); menu.hidden = true; topo.classList.toggle('rolou', window.scrollY > 24); };
+const fecharMenu = () => { botaoMenu.setAttribute('aria-expanded', 'false'); menu.hidden = true; marcarRolagem(); };
 botaoMenu.addEventListener('click', () => {
   const abrir = botaoMenu.getAttribute('aria-expanded') !== 'true';
   botaoMenu.setAttribute('aria-expanded', String(abrir));
@@ -73,7 +75,7 @@ if ('IntersectionObserver' in window) {
 // Formulário: monta a mensagem e abre o WhatsApp (o site não guarda nada)
 const WHATSAPP = '5531971087909';
 const formulario = document.querySelector('[data-formulario]');
-formulario.addEventListener('submit', (e) => {
+if (formulario) formulario.addEventListener('submit', (e) => {
   e.preventDefault();
   const dados = new FormData(formulario);
   const nome = String(dados.get('nome') || '').trim();
@@ -94,7 +96,7 @@ document.querySelectorAll('[data-ano]').forEach((el) => { el.textContent = new D
 
 // Botões que já escolhem o perfil no formulário (ex.: parceria OAB → advogado)
 document.querySelectorAll('[data-perfil]').forEach((botao) => {
-  botao.addEventListener('click', () => { formulario.elements.perfil.value = botao.dataset.perfil; });
+  botao.addEventListener('click', () => { if (formulario) formulario.elements.perfil.value = botao.dataset.perfil; });
 });
 
 // O site sempre abre na capa (sem restaurar a rolagem anterior), exceto quando o link aponta uma seção
@@ -106,7 +108,7 @@ if (!location.hash) window.scrollTo(0, 0);
 // Luz que segue o mouse (capa e cartões)
 const capa = document.querySelector('.capa');
 const luzCapa = document.querySelector('.capa__luz');
-capa.addEventListener('pointermove', (e) => {
+if (capa) capa.addEventListener('pointermove', (e) => {
   const r = capa.getBoundingClientRect();
   luzCapa.style.setProperty('--mx', `${e.clientX - r.left}px`);
   luzCapa.style.setProperty('--my', `${e.clientY - r.top}px`);
@@ -142,7 +144,7 @@ if (!semMovimento && 'IntersectionObserver' in window) {
 
 // Poeira dourada na capa: poucas partículas, lentas, só enquanto a capa está visível
 const tela = document.querySelector('.capa__poeira');
-if (tela && !semMovimento) {
+if (tela && capa && !semMovimento) {
   const ctx = tela.getContext('2d');
   let largura = 0, altura = 0, particulas = [], ativa = true, quadro = 0;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);

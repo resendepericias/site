@@ -735,3 +735,36 @@ em { font-style: italic; color: var(--ouro); }
 }
 .capa__linha b { font-weight: 600; }
 .parceria-oab__numero--texto { font-size: clamp(48px, 6vw, 72px); font-style: italic; }
+
+/* =====================================================================
+   PÁGINAS DE ÁREA
+   ===================================================================== */
+.area-capa {
+  position: relative; overflow: hidden; padding: 150px 0 clamp(70px, 9vw, 110px);
+  background: radial-gradient(110% 90% at 80% 0%, #1b3149 0%, var(--noite) 60%);
+}
+.area-capa .titulo { max-width: 15ch; }
+.area-capa__lead { margin-top: 28px; max-width: 620px; font-size: clamp(17px, 1.6vw, 20px); color: var(--claro-suave); }
+.area-capa__acoes { justify-content: flex-start; }
+.migalhas { margin-bottom: 34px; font-size: 13px; color: var(--claro-suave); }
+.migalhas a { color: var(--ouro); text-decoration: none; }
+.migalhas span[aria-hidden] { margin: 0 8px; opacity: .5; }
+
+.area-texto { display: grid; gap: 40px; }
+.area-lista { display: grid; gap: 0; border-top: 1px solid var(--linha-escura); }
+.area-lista li { position: relative; padding: 22px 0 22px 34px; border-bottom: 1px solid var(--linha-escura); color: var(--tinta-suave); font-size: 17px; }
+.area-lista li::before { content: ""; position: absolute; left: 0; top: 34px; width: 16px; height: 1px; background: var(--ouro-texto); }
+@media (min-width: 960px) { .area-texto { grid-template-columns: .9fr 1.1fr; gap: 96px; } }
+
+.area-pontos { display: grid; gap: 24px; }
+.area-pontos li { padding: clamp(28px, 3.5vw, 44px); border: 1px solid var(--linha-clara); border-radius: var(--raio); background: linear-gradient(180deg, rgba(255,255,255,.03), transparent); }
+.area-pontos h3 { font-family: var(--serifa); font-size: clamp(25px, 2.4vw, 30px); font-weight: 600; line-height: 1.15; color: var(--ouro); }
+.area-pontos p { margin-top: 12px; color: var(--claro-suave); font-size: 16px; }
+@media (min-width: 900px) { .area-pontos { grid-template-columns: repeat(3, 1fr); } }
+
+.area-contato { display: grid; justify-items: start; }
+.area-outras { margin-top: 70px; padding-top: 34px; border-top: 1px solid var(--linha-clara); width: 100%; }
+.area-outras ul { display: flex; flex-wrap: wrap; gap: 14px 34px; margin-top: 20px; }
+
+/* links “Saiba mais” nos cartões de área da página inicial */
+.area .link-seta { margin-top: 8px; color: var(--ouro-texto); font-size: 14px; }
