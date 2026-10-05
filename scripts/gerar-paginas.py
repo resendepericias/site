@@ -17,6 +17,7 @@ WHATSAPP = "5531971087909"
 AREAS = [
     {
         "slug": "assistente-tecnico-pericia-medica",
+        "menu_longo": "Assistente técnico em perícia médica",
         "menu": "Assistente técnico",
         "titulo_seo": "Assistente Técnico em Perícia Médica | Resende Perícias Médicas",
         "descricao": "Assistente técnica médica para advogados em todo o Brasil: análise de viabilidade, quesitos, acompanhamento da perícia e parecer técnico para impugnar o laudo.",
@@ -42,6 +43,7 @@ AREAS = [
     },
     {
         "slug": "pericia-inss-bpc",
+        "menu_longo": "INSS e BPC/LOAS",
         "menu": "INSS e BPC",
         "titulo_seo": "Assistente Técnico em Perícia do INSS e BPC/LOAS | Resende Perícias",
         "descricao": "Assistência técnica médica em ações previdenciárias: auxílio por incapacidade, aposentadoria por incapacidade, auxílio-acidente e BPC/LOAS. Quesitos, acompanhamento e parecer.",
@@ -67,6 +69,7 @@ AREAS = [
     },
     {
         "slug": "pericia-erro-medico",
+        "menu_longo": "Erro médico",
         "menu": "Erro médico",
         "titulo_seo": "Perícia em Erro Médico: Assistente Técnico | Resende Perícias Médicas",
         "descricao": "Assistência técnica em ações de erro médico e responsabilidade civil em saúde: nexo entre conduta e dano, falha de diagnóstico, dano estético e óbito. Atuação em todo o Brasil.",
@@ -92,6 +95,7 @@ AREAS = [
     },
     {
         "slug": "pericia-trabalhista",
+        "menu_longo": "Perícia trabalhista",
         "menu": "Trabalhista",
         "titulo_seo": "Assistente Técnico em Perícia Médica Trabalhista | Resende Perícias",
         "descricao": "Assistência técnica médica em perícias trabalhistas: doença ocupacional, acidente de trabalho, nexo causal, incapacidade e visita ao local de trabalho.",
@@ -117,6 +121,7 @@ AREAS = [
     },
     {
         "slug": "pericia-curatela-interdicao",
+        "menu_longo": "Curatela, interdição e home care",
         "menu": "Curatela",
         "titulo_seo": "Perícia Médica em Curatela e Interdição | Resende Perícias Médicas",
         "descricao": "Perícia e assistência técnica em ações de curatela, interdição e tomada de decisão apoiada: avaliação do discernimento para os atos da vida civil. Também home care.",
@@ -142,6 +147,7 @@ AREAS = [
     },
     {
         "slug": "dano-corporal-estetico",
+        "menu_longo": "Dano corporal e estético",
         "menu": "Dano corporal",
         "titulo_seo": "Perícia de Dano Corporal e Dano Estético | Resende Perícias Médicas",
         "descricao": "Avaliação e quantificação do dano corporal e do dano estético em acidentes e lesões: sequelas, incapacidade e repercussões na vida da vítima. Assistência técnica em todo o Brasil.",
@@ -168,6 +174,41 @@ AREAS = [
 ]
 
 
+def menu_areas():
+    itens = "\n".join(f'            <a href="/{a["slug"]}/">{a["menu_longo"]}</a>' for a in AREAS)
+    return f'''<div class="topo__grupo">
+          <button class="topo__abrir" type="button" aria-haspopup="true">Áreas</button>
+          <div class="topo__painel">
+{itens}
+          </div>
+        </div>'''
+
+
+def menu_movel_areas():
+    itens = "\n".join(f'        <a href="/{a["slug"]}/">{a["menu_longo"]}</a>' for a in AREAS)
+    return f'''<p class="menu-movel__titulo">Áreas</p>
+      <div class="menu-movel__areas">
+{itens}
+      </div>'''
+
+
+def rodape_areas():
+    itens = "\n".join(f'          <li><a href="/{a["slug"]}/">{a["menu_longo"]}</a></li>' for a in AREAS)
+    return f'''<nav class="rodape__areas" aria-label="Áreas de atuação">
+        <p>Áreas de atuação</p>
+        <ul>
+{itens}
+        </ul>
+      </nav>'''
+
+
+def aplicar(texto, marcador, bloco):
+    """Troca o conteúdo entre <!-- MARCADOR --> e <!-- /MARCADOR --> pelo bloco."""
+    ini, fim = f"<!-- {marcador} -->", f"<!-- /{marcador} -->"
+    a, b = texto.index(ini) + len(ini), texto.index(fim)
+    return texto[:a] + bloco + texto[b:]
+
+
 def cabecalho():
     return f'''  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
   <header class="topo rolou" data-topo>
@@ -177,8 +218,7 @@ def cabecalho():
       </a>
       <nav class="topo__nav" aria-label="Seções">
         <a href="/#sobre">Quem sou</a>
-        <a href="/#atuacao">Atuação</a>
-        <a href="/#areas">Áreas</a>
+        {menu_areas()}
         <a href="/#convenio">Convênio OAB</a>
         <a href="/#duvidas">Dúvidas</a>
       </nav>
@@ -190,7 +230,7 @@ def cabecalho():
     <nav class="menu-movel" id="menu-movel" aria-label="Seções" hidden>
       <a href="/">Início</a>
       <a href="/#sobre">Quem sou</a>
-      <a href="/#areas">Áreas</a>
+      {menu_movel_areas()}
       <a href="/#convenio">Convênio OAB</a>
       <a href="#contato" class="botao botao--ouro">Fale sobre seu caso</a>
     </nav>
@@ -198,9 +238,10 @@ def cabecalho():
 
 
 def rodape():
-    return '''  <footer class="rodape">
+    return f'''  <footer class="rodape">
     <div class="rodape__grade envelope">
       <img src="/assets/marca/logo-claro.svg" alt="Resende Perícias Médicas" width="190" height="52">
+      {rodape_areas()}
       <p>
         Responsável técnica: Dra. Priscila Cintra Campos Resende · Médica · CRM/MG 72810<br>
         Belo Horizonte, Minas Gerais · atuação em todo o Brasil<br>
@@ -393,6 +434,12 @@ def main():
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{mapa}\n</urlset>\n',
         encoding="utf-8",
     )
+    inicio = RAIZ / "index.html"
+    html = inicio.read_text(encoding="utf-8")
+    html = aplicar(html, "MENU-AREAS", menu_areas())
+    html = aplicar(html, "MENU-MOVEL-AREAS", menu_movel_areas())
+    html = aplicar(html, "RODAPE-AREAS", rodape_areas())
+    inicio.write_text(html, encoding="utf-8")
     (RAIZ / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     print(f"{len(AREAS)} páginas, sitemap com {len(urls)} endereços.")
 
