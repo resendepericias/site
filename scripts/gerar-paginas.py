@@ -42,6 +42,32 @@ AREAS = [
         ],
     },
     {
+        "slug": "impugnacao-laudo-pericial",
+        "menu_longo": "Impugnação de laudo pericial",
+        "menu": "Impugnação de laudo",
+        "titulo_seo": "Impugnação de Laudo Pericial Médico | Assistente Técnico | Resende Perícias",
+        "descricao": "Laudo pericial médico desfavorável? Análise crítica e parecer técnico para a impugnação no prazo de 15 dias (CPC, art. 477). Assistente técnica médica em todo o Brasil.",
+        "sobretitulo": "Laudo já saiu",
+        "h1": "Impugnação de laudo <em>pericial.</em>",
+        "lead": "Quando o laudo do perito é desfavorável, o parecer do assistente técnico é a resposta médica do processo. O prazo é curto: 15 dias da intimação sobre o laudo.",
+        "quando": [
+            "Laudo com conclusão contrária aos documentos médicos do processo.",
+            "Laudo que deixou quesitos sem resposta ou respondeu de forma genérica.",
+            "Exame pericial superficial, sem considerar exames, histórico ou a atividade de trabalho.",
+            "Nexo causal, incapacidade ou data de início fixados sem fundamentação suficiente.",
+        ],
+        "pontos": [
+            ("Prazo de 15 dias", "O parecer do assistente técnico acompanha a manifestação sobre o laudo (CPC, art. 477, § 1º). Envie o laudo assim que houver a intimação."),
+            ("Análise ponto a ponto", "Cada conclusão do perito é confrontada com o prontuário, os exames e a literatura médica."),
+            ("Esclarecimentos", "Além do parecer, novos quesitos e pedidos de esclarecimento ao perito (CPC, art. 477, § 2º)."),
+        ],
+        "faq": [
+            ("Qual o prazo para impugnar o laudo pericial?", "Quinze dias da intimação sobre o laudo, prazo em que as partes se manifestam e o assistente técnico apresenta seu parecer (CPC, art. 477, § 1º). Por isso, o ideal é enviar o laudo logo que ele for juntado."),
+            ("Posso contratar assistente técnico só depois do laudo?", "Sim. O parecer técnico pode fundamentar a manifestação da parte sobre o laudo; a forma de juntada depende do andamento do processo e é combinada com o advogado."),
+            ("O que preciso enviar?", "Para a primeira leitura, o laudo e um resumo do caso. Depois, os quesitos apresentados e os documentos médicos do processo."),
+        ],
+    },
+    {
         "slug": "pericia-inss-bpc",
         "menu_longo": "INSS e BPC/LOAS",
         "menu": "INSS e BPC",
@@ -250,7 +276,10 @@ def rodape():
         Conveniada OAB/MG · CAAMG
       </p>
       <p class="rodape__legal">
-        Conteúdo de caráter informativo, conforme as normas de publicidade médica do Conselho Federal de Medicina.
+        Atuação conforme o Código de Ética Médica, as resoluções do Conselho Federal de Medicina e o Código de Processo Civil
+        (arts. 465 a 480). A atuação como perita judicial decorre de nomeação pelo juízo, em cada processo.
+        Nenhum resultado processual é prometido ou garantido. Este site tem caráter informativo e não presta atendimento
+        médico de urgência. <a href="/privacidade/">Política de privacidade</a>.
         © <span data-ano>2026</span> Resende Perícias Médicas · Resende Soluções Médicas Ltda. · CNPJ 37.037.770/0001-19
       </p>
     </div>
@@ -418,6 +447,75 @@ def pagina(a):
 '''
 
 
+def pagina_privacidade():
+    """Política de privacidade (LGPD), com o mesmo cabeçalho e rodapé do site."""
+    return f'''<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade | Resende Perícias Médicas</title>
+  <meta name="description" content="Como a Resende Perícias Médicas trata dados pessoais e documentos, conforme a Lei Geral de Proteção de Dados (LGPD).">
+  <meta name="theme-color" content="#141A29">
+  <link rel="canonical" href="{SITE}/privacidade/">
+  <link rel="icon" href="/assets/marca/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+{cabecalho()}
+
+  <main id="conteudo">
+    <section class="area-capa">
+      <div class="envelope">
+        <nav class="migalhas" aria-label="Você está em"><a href="/">Início</a> <span aria-hidden="true">/</span> <span>Privacidade</span></nav>
+        <p class="sobretitulo">LGPD</p>
+        <h1 class="titulo titulo--claro titulo--grande">Política de <em>privacidade.</em></h1>
+      </div>
+    </section>
+    <section class="secao secao--papel">
+      <div class="envelope texto-legal">
+        <h2>Quem somos</h2>
+        <p>Resende Perícias Médicas (Resende Soluções Médicas Ltda., CNPJ 37.037.770/0001-19), sob responsabilidade técnica da Dra. Priscila Cintra Campos Resende, CRM/MG 72810. Contato do encarregado de dados: <a href="mailto:contato@resendepericias.com.br">contato@resendepericias.com.br</a>.</p>
+        <h2>O que este site coleta</h2>
+        <p>Este site não tem cadastro, não usa cookies de rastreamento nem ferramentas de publicidade. O formulário de contato não grava nada: ele apenas abre o WhatsApp com a sua mensagem. As fontes tipográficas são carregadas do Google Fonts, que recebe o endereço de acesso do navegador para entregar os arquivos.</p>
+        <h2>Dados que você nos envia</h2>
+        <p>Mensagens por WhatsApp ou e-mail e, quando há contratação, documentos do processo e documentos médicos (prontuários, exames, relatórios). Esses dados são usados exclusivamente para analisar o caso, elaborar orçamento e prestar o serviço contratado.</p>
+        <h2>Sigilo e segurança</h2>
+        <p>Documentos médicos são dados pessoais sensíveis. São tratados com sigilo profissional médico, acesso restrito e guardados apenas pelo tempo necessário ao serviço e às obrigações legais e éticas. Não vendemos nem compartilhamos dados, salvo a juntada de documentos ao próprio processo, quando contratada.</p>
+        <h2>Seus direitos</h2>
+        <p>Você pode pedir a qualquer momento a confirmação, o acesso, a correção ou a exclusão dos seus dados, nos termos do art. 18 da Lei nº 13.709/2018 (LGPD), pelo e-mail <a href="mailto:contato@resendepericias.com.br">contato@resendepericias.com.br</a>.</p>
+        <p class="texto-legal__data">Atualizada em {date.today().strftime("%d/%m/%Y")}.</p>
+      </div>
+    </section>
+  </main>
+
+{rodape()}
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
+'''
+
+
+def faq_inicio(html):
+    """Atualiza as perguntas frequentes nos dados estruturados da página inicial."""
+    import re
+    perguntas = re.findall(r'<details class="revelar">\s*<summary>(.*?)</summary>\s*<p>(.*?)</p>', html, re.S)
+    ini = html.index('<script type="application/ld+json">') + len('<script type="application/ld+json">')
+    fim = html.index("</script>", ini)
+    dados = json.loads(html[ini:fim])
+    for no in dados["@graph"]:
+        if no.get("@type") == "FAQPage":
+            no["mainEntity"] = [
+                {"@type": "Question", "name": p.strip(), "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"\s+", " ", r).strip()}}
+                for p, r in perguntas
+            ]
+    return html[:ini] + "\n" + json.dumps(dados, ensure_ascii=False, indent=2) + "\n  " + html[fim:]
+
+
 def main():
     hoje = date.today().isoformat()
     urls = [f"{SITE}/"]
@@ -426,6 +524,9 @@ def main():
         pasta.mkdir(exist_ok=True)
         (pasta / "index.html").write_text(pagina(a), encoding="utf-8")
         urls.append(f"{SITE}/{a['slug']}/")
+    (RAIZ / "privacidade").mkdir(exist_ok=True)
+    (RAIZ / "privacidade" / "index.html").write_text(pagina_privacidade(), encoding="utf-8")
+    urls.append(f"{SITE}/privacidade/")
     mapa = "\n".join(
         f"  <url><loc>{u}</loc><lastmod>{hoje}</lastmod><priority>{'1.0' if u == SITE + '/' else '0.8'}</priority></url>"
         for u in urls
@@ -439,6 +540,7 @@ def main():
     html = aplicar(html, "MENU-AREAS", menu_areas())
     html = aplicar(html, "MENU-MOVEL-AREAS", menu_movel_areas())
     html = aplicar(html, "RODAPE-AREAS", rodape_areas())
+    html = faq_inicio(html)
     inicio.write_text(html, encoding="utf-8")
     (RAIZ / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     print(f"{len(AREAS)} páginas, sitemap com {len(urls)} endereços.")

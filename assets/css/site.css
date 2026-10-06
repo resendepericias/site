@@ -807,3 +807,94 @@ em { font-style: italic; color: var(--ouro); }
 .rodape__areas a:hover { color: var(--ouro); }
 @media (min-width: 960px) { .rodape__grade { grid-template-columns: auto auto 1fr 1fr; gap: 56px; align-items: start; } }
 .menu-movel { max-height: calc(100svh - 84px); overflow-y: auto; overscroll-behavior: contain; }
+
+/* =====================================================================
+   NOVAS SEÇÕES: urgência, quem atendo, Brasil, como começa, texto legal
+   ===================================================================== */
+.capa__local strong { color: var(--ouro); font-weight: 700; letter-spacing: .04em; }
+
+/* Faixa de urgência (laudo já saiu) */
+.urgente {
+  position: relative; overflow: hidden; padding: clamp(34px, 5vw, 52px) 0;
+  background: linear-gradient(100deg, #1d3550 0%, var(--noite-2) 55%);
+  border-block: 1px solid rgba(214, 195, 153, .35);
+}
+.urgente::before { /* brilho dourado na borda esquerda */
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--ouro);
+}
+.urgente__grade { display: grid; gap: 26px; align-items: center; }
+.urgente__rotulo {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--ouro);
+}
+.urgente__ponto { width: 8px; height: 8px; border-radius: 50%; background: var(--ouro); box-shadow: 0 0 0 0 rgba(214,195,153,.6); animation: pulsar 2s infinite; }
+@keyframes pulsar { 0% { box-shadow: 0 0 0 0 rgba(214,195,153,.55); } 70% { box-shadow: 0 0 0 12px rgba(214,195,153,0); } 100% { box-shadow: 0 0 0 0 rgba(214,195,153,0); } }
+.urgente__titulo { margin-top: 10px; font-family: var(--serifa); font-size: clamp(30px, 3.6vw, 44px); font-weight: 500; line-height: 1.1; }
+.urgente__apoio { margin-top: 12px; max-width: 640px; color: var(--claro-suave); font-size: 16px; }
+.urgente__apoio span { display: inline-block; margin-left: 6px; font-size: 12.5px; color: var(--ouro); opacity: .8; }
+.urgente__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; }
+@media (min-width: 960px) { .urgente__grade { grid-template-columns: 1.4fr auto; gap: 56px; } .urgente__acoes { flex-direction: column; align-items: flex-end; } }
+
+/* Quem atendo */
+.publicos { display: grid; gap: 18px; }
+.publicos li {
+  display: grid; gap: 12px; align-content: start; padding: clamp(26px, 3vw, 36px);
+  background: #fff; border: 1px solid var(--linha-escura); border-radius: var(--raio);
+  transition: transform .5s var(--suave), box-shadow .5s var(--suave), border-color .5s;
+}
+.publicos li:hover { transform: translateY(-4px); box-shadow: 0 26px 50px -30px rgba(20,26,41,.45); border-color: rgba(122,100,54,.4); }
+.publicos .icone { width: 30px; height: 30px; color: var(--ouro-texto); }
+.publicos h3 { font-family: var(--serifa); font-size: 25px; font-weight: 600; line-height: 1.15; }
+.publicos p { color: var(--tinta-suave); font-size: 15.5px; }
+.publicos [data-luz]::after { background: radial-gradient(320px circle at var(--mx,50%) var(--my,50%), rgba(214,195,153,.18), transparent 60%); }
+@media (min-width: 720px) { .publicos { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .publicos { grid-template-columns: repeat(4, 1fr); } }
+
+/* Abrangência nacional */
+.brasil {
+  position: relative; overflow: hidden; padding: var(--respiro) 0;
+  background:
+    radial-gradient(700px 420px at 85% 20%, rgba(214,195,153,.12), transparent 65%),
+    radial-gradient(900px 600px at 0% 100%, rgba(22,57,80,.9), transparent 70%),
+    var(--noite);
+}
+.brasil::after { /* palavra-marca ao fundo */
+  content: "BRASIL"; position: absolute; right: -2vw; bottom: -4vw; z-index: 0; pointer-events: none;
+  font-family: var(--serifa); font-weight: 600; font-size: clamp(110px, 22vw, 330px); letter-spacing: -.02em; line-height: 1;
+  color: transparent; -webkit-text-stroke: 1px rgba(214,195,153,.14);
+}
+.brasil .envelope { position: relative; z-index: 1; }
+.brasil__cabeca { max-width: 820px; }
+.brasil__lead { margin-top: 24px; max-width: 560px; color: var(--claro-suave); font-size: 18px; }
+.brasil__regioes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.brasil__regioes li {
+  padding: 8px 16px; border: 1px solid rgba(214,195,153,.45); border-radius: 999px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ouro);
+  background: rgba(214,195,153,.06);
+}
+.brasil__modos { display: grid; gap: 22px; margin-top: clamp(48px, 6vw, 76px); }
+.brasil__modos li { padding-top: 24px; border-top: 1px solid var(--linha-clara); }
+.brasil__num { font-family: var(--serifa); font-size: 18px; color: var(--ouro); letter-spacing: .08em; }
+.brasil__modos h3 { margin-top: 10px; font-family: var(--serifa); font-size: clamp(26px, 2.6vw, 32px); font-weight: 600; line-height: 1.1; }
+.brasil__modos p { margin-top: 10px; color: var(--claro-suave); font-size: 15.5px; max-width: 360px; }
+@media (min-width: 900px) { .brasil__modos { grid-template-columns: repeat(3, 1fr); gap: 48px; } }
+
+/* Como começa (no método) */
+.primeiro-passo {
+  max-width: 820px; margin: clamp(40px, 5vw, 60px) auto 0; padding: 26px 30px;
+  border: 1px solid rgba(214,195,153,.35); border-radius: var(--raio); background: rgba(20,26,41,.35);
+  text-align: center; color: var(--claro-suave); font-size: 16px;
+}
+.primeiro-passo strong { color: var(--claro); }
+.primeiro-passo__titulo { margin-bottom: 8px; font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--ouro); }
+
+/* Página de texto legal */
+.texto-legal { max-width: 760px; }
+.texto-legal h2 { margin-top: 36px; font-family: var(--serifa); font-size: 28px; font-weight: 600; color: var(--tinta); }
+.texto-legal h2:first-child { margin-top: 0; }
+.texto-legal p { margin-top: 12px; color: var(--tinta-suave); }
+.texto-legal a { color: var(--ouro-texto); }
+.texto-legal__data { margin-top: 40px !important; font-size: 13.5px; }
+.rodape__legal a { color: var(--claro-suave); }
+
+@media (prefers-reduced-motion: reduce) { .urgente__ponto { animation: none; } }
