@@ -898,3 +898,4 @@ em { font-style: italic; color: var(--ouro); }
 .rodape__legal a { color: var(--claro-suave); }
 
 @media (prefers-reduced-motion: reduce) { .urgente__ponto { animation: none; } }
+.sobre__corpo strong { color: var(--tinta); font-weight: 700; }
