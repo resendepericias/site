@@ -64,7 +64,7 @@ AREAS = [
         "faq": [
             ("Qual o prazo para impugnar o laudo pericial?", "Quinze dias da intimação sobre o laudo, prazo em que as partes se manifestam e o assistente técnico apresenta seu parecer (CPC, art. 477, § 1º). Por isso, o ideal é enviar o laudo logo que ele for juntado."),
             ("Posso contratar assistente técnico só depois do laudo?", "Sim. O parecer técnico pode fundamentar a manifestação da parte sobre o laudo; a forma de juntada depende do andamento do processo e é combinada com o advogado."),
-            ("O que preciso enviar?", "Para a primeira leitura, o laudo e um resumo do caso. Depois, os quesitos apresentados e os documentos médicos do processo."),
+            ("O que preciso enviar?", "Para a triagem técnica, o laudo pericial e os quesitos do processo. Com o trabalho contratado, os documentos médicos e as demais peças necessárias."),
         ],
     },
     {
